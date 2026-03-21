@@ -1,9 +1,6 @@
 services:
   web:
-    image: nginx:alpine
-    volumes:
-      - ./index.html:/usr/share/nginx/html/index.html:ro
-      - ./1mini.png:/usr/share/nginx/html/1mini.png:ro
+    build: .
     ports:
       - "3810:80"
     restart: unless-stopped
