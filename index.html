@@ -82,6 +82,36 @@
 
         .nav-links a:hover { color: var(--primary); }
 
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .lang-switch a,
+        .lang-switch span {
+            padding: 6px 10px;
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .lang-switch .lang-active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-switch .lang-inactive {
+            color: var(--text-light);
+            transition: color 0.2s;
+        }
+
+        .lang-switch .lang-inactive:hover { color: var(--primary); }
+
         .cta-btn {
             background: var(--primary);
             color: white;
@@ -667,6 +697,10 @@
                     <li><a href="#faq">Вопросы</a></li>
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
+                <div class="lang-switch">
+                    <span class="lang-active">RU</span>
+                    <a href="https://sashin.net" class="lang-inactive">EN</a>
+                </div>
                 <a href="https://t.me/romansashin" class="cta-btn">Связаться</a>
                 <button class="burger" id="burger" aria-label="Меню">
                     <span></span><span></span><span></span>
@@ -677,6 +711,13 @@
                 <a href="#cases" class="mobile-link">Кейсы</a>
                 <a href="#faq" class="mobile-link">Вопросы</a>
                 <a href="#contact" class="mobile-link">Контакты</a>
+                <a href="https://sashin.net" class="mobile-link" style="color: var(--text-light); display: flex; align-items: center; gap: 8px;">
+                    <div class="lang-switch" style="border: none; font-size: 0.82rem;">
+                        <span class="lang-active">RU</span>
+                        <span class="lang-inactive" style="color: var(--text-light);">EN →</span>
+                    </div>
+                    Версия на английском
+                </a>
             </div>
         </div>
     </header>
@@ -978,9 +1019,15 @@
                     <a href="#faq">Вопросы</a>
                     <a href="#contact">Контакты</a>
                 </div>
-                <div class="social-links">
-                    <a href="https://t.me/romansashin" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="mailto:mail@romansashin.ru" title="Email"><i class="fas fa-envelope"></i></a>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div class="lang-switch">
+                        <span class="lang-active">RU</span>
+                        <a href="https://sashin.net" class="lang-inactive">EN</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://t.me/romansashin" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="mailto:mail@romansashin.ru" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
