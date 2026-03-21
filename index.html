@@ -23,14 +23,12 @@
             --bg-alt: #f8fafc;
             --border: #e2e8f0;
             --shadow: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-hover: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 16px rgba(40,54,85,0.12);
             --whatsapp: #25D366;
             --telegram: #229ED9;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -45,15 +43,14 @@
             padding: 0 24px;
         }
 
-        /* Header */
+        /* ─── Header ─── */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255,255,255,0.98);
             border-bottom: 1px solid var(--border);
+            transition: box-shadow 0.2s;
         }
 
         nav {
@@ -83,9 +80,7 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         .cta-btn {
             background: var(--primary);
@@ -95,14 +90,57 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: all 0.2s;
+            transition: background 0.2s;
         }
 
-        .cta-btn:hover {
-            background: var(--primary-dark);
+        .cta-btn:hover { background: var(--primary-dark); }
+
+        /* Burger */
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
         }
 
-        /* Hero */
+        .burger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .burger.open span:nth-child(2) { opacity: 0; }
+        .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            border-top: 1px solid var(--border);
+            padding: 8px 0 16px;
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-menu a:last-child { border-bottom: none; }
+
+        /* ─── Hero ─── */
         .hero {
             padding: 140px 0 80px;
             background: var(--bg-alt);
@@ -111,7 +149,7 @@
         .hero-wrapper {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 48px;
         }
 
         .hero-image {
@@ -130,9 +168,23 @@
             object-fit: cover;
         }
 
-        .hero-content {
-            flex: 1;
+        .hero-content { flex: 1; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
         }
+
+        .hero-badge i { font-size: 0.75rem; }
 
         .hero h1 {
             font-size: 2.2rem;
@@ -142,9 +194,7 @@
             color: var(--text);
         }
 
-        .hero h1 span {
-            color: var(--primary);
-        }
+        .hero h1 span { color: var(--primary); }
 
         .hero p {
             font-size: 1.05rem;
@@ -167,15 +217,13 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: all 0.2s;
+            transition: background 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
         }
 
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
+        .btn-primary:hover { background: var(--primary-dark); }
 
         .btn-secondary {
             background: white;
@@ -197,14 +245,43 @@
             color: var(--primary);
         }
 
-        /* Services */
-        .services {
-            padding: 80px 0;
+        /* ─── Stats ─── */
+        .stats {
+            background: var(--primary);
+            padding: 40px 0;
         }
 
-        .section-header {
-            margin-bottom: 48px;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            text-align: center;
         }
+
+        .stat-item {
+            padding: 8px 16px;
+            border-right: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .stat-item:last-child { border-right: none; }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            margin-top: 4px;
+        }
+
+        /* ─── Services ─── */
+        .services { padding: 80px 0; }
+
+        .section-header { margin-bottom: 48px; }
 
         .section-header h2 {
             font-size: 1.6rem;
@@ -235,6 +312,7 @@
         .service-card:hover {
             border-color: var(--primary);
             box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
         }
 
         .service-icon {
@@ -264,7 +342,7 @@
             line-height: 1.6;
         }
 
-        /* Cases */
+        /* ─── Cases ─── */
         .cases {
             padding: 80px 0;
             background: var(--bg-alt);
@@ -322,16 +400,13 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            transition: gap 0.2s;
         }
 
-        .case-link:hover {
-            gap: 10px;
-        }
+        .case-link:hover { gap: 10px; }
 
-        /* FAQ */
-        .faq {
-            padding: 80px 0;
-        }
+        /* ─── FAQ ─── */
+        .faq { padding: 80px 0; }
 
         .faq-grid {
             display: grid;
@@ -354,11 +429,10 @@
             align-items: center;
             background: var(--bg);
             transition: background 0.2s;
+            user-select: none;
         }
 
-        .faq-question:hover {
-            background: var(--bg-alt);
-        }
+        .faq-question:hover { background: var(--bg-alt); }
 
         .faq-question h4 {
             font-size: 0.95rem;
@@ -395,13 +469,13 @@
             color: var(--text-light);
             font-size: 0.9rem;
             line-height: 1.6;
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-        }
+        .faq-item.active .faq-answer { max-height: 300px; }
 
-        /* CTA */
+        /* ─── CTA ─── */
         .cta-section {
             padding: 80px 0;
             background: var(--bg-alt);
@@ -410,30 +484,37 @@
         .cta-box {
             background: var(--primary);
             border-radius: 12px;
-            padding: 48px 40px;
+            padding: 56px 40px;
             text-align: center;
         }
 
         .cta-box h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: white;
             margin-bottom: 12px;
         }
 
-        .cta-box p {
+        .cta-box > p {
             font-size: 1rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 32px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 36px;
             max-width: 550px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .cta-whatsapp {
             background: var(--whatsapp);
             color: white;
-            padding: 14px 36px;
+            padding: 14px 32px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
@@ -449,13 +530,32 @@
             transform: translateY(-2px);
         }
 
-        .cta-note {
-            margin-top: 16px;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.8);
+        .cta-telegram {
+            background: var(--telegram);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
         }
 
-        /* Footer */
+        .cta-telegram:hover {
+            background: #1b8ab8;
+            transform: translateY(-2px);
+        }
+
+        .cta-note {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ─── Footer ─── */
         footer {
             padding: 40px 0;
             border-top: 1px solid var(--border);
@@ -484,14 +584,9 @@
             transition: color 0.2s;
         }
 
-        .footer-links a:hover {
-            color: var(--primary);
-        }
+        .footer-links a:hover { color: var(--primary); }
 
-        .social-links {
-            display: flex;
-            gap: 12px;
-        }
+        .social-links { display: flex; gap: 12px; }
 
         .social-links a {
             width: 36px;
@@ -520,11 +615,10 @@
             font-size: 0.85rem;
         }
 
-        /* Mobile */
+        /* ─── Responsive ─── */
         @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
+            .nav-links, .cta-btn { display: none; }
+            .burger { display: flex; }
 
             .hero-wrapper {
                 flex-direction: column;
@@ -532,26 +626,21 @@
                 gap: 24px;
             }
 
-            .hero-buttons {
-                justify-content: center;
-            }
+            .hero-buttons { justify-content: center; }
 
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-item:nth-child(2) { border-right: none; }
+            .stat-item:nth-child(1),
+            .stat-item:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.15); }
 
-            .cases-grid,
-            .faq-grid {
-                grid-template-columns: 1fr;
-            }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
 
-            .hero h1 {
-                font-size: 1.8rem;
-            }
+            .cases-grid, .faq-grid { grid-template-columns: 1fr; }
 
-            .cta-box {
-                padding: 36px 24px;
-            }
+            .hero h1 { font-size: 1.8rem; }
+
+            .cta-box { padding: 36px 24px; }
+            .cta-box h2 { font-size: 1.4rem; }
 
             .footer-content {
                 flex-direction: column;
@@ -561,9 +650,9 @@
         }
 
         @media (max-width: 500px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+            .services-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -579,7 +668,16 @@
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
                 <a href="https://t.me/romansashin" class="cta-btn">Связаться</a>
+                <button class="burger" id="burger" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#services" class="mobile-link">Услуги</a>
+                <a href="#cases" class="mobile-link">Кейсы</a>
+                <a href="#faq" class="mobile-link">Вопросы</a>
+                <a href="#contact" class="mobile-link">Контакты</a>
+            </div>
         </div>
     </header>
 
@@ -589,8 +687,11 @@
                 <div class="hero-image">
                     <img src="1mini.png" alt="Роман Сашин">
                 </div>
-                
                 <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-circle" style="color: #22c55e; font-size: 8px;"></i>
+                        Доступен для новых проектов
+                    </div>
                     <h1>IT Инженер & <span>Архитектор</span></h1>
                     <p>Превращаю сложные технологические задачи в простые и эффективные решения для вашего бизнеса. Современные технологии и проверенные методики для роста компании.</p>
                     <div class="hero-buttons">
@@ -599,9 +700,32 @@
                             Написать в Telegram
                         </a>
                         <a href="#cases" class="btn-secondary">
-                            Кейсы
+                            Мои кейсы
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Реализованных проектов</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Лет в разработке</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Довольных клиентов</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2–3</div>
+                    <div class="stat-label">Недели до первого результата</div>
                 </div>
             </div>
         </div>
@@ -684,13 +808,13 @@
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-header">
-                <h2>Вопросы</h2>
-                <p>Ответы на частые вопросы</p>
+                <h2>Частые вопросы</h2>
+                <p>Отвечаю на возражения, которые слышу чаще всего</p>
             </div>
             <div class="faq-grid">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Наши процессы уникальны</h4>
+                        <h4>У нас уникальные процессы, под нас не подстроиться</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
@@ -701,7 +825,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Не доверяем автоматике</h4>
+                        <h4>Мы не доверяем автоматике</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
@@ -712,7 +836,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Нет бюджета</h4>
+                        <h4>Сейчас нет бюджета</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
@@ -723,7 +847,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>И так всё работает</h4>
+                        <h4>И так всё работает, зачем что-то менять</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
@@ -734,7 +858,7 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Пробовали — не вышло</h4>
+                        <h4>Пробовали автоматизацию — не вышло</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
@@ -745,18 +869,18 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>AI — это сложно</h4>
+                        <h4>AI — это слишком сложно для нас</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Первый результат через 2-3 недели. Настраиваю процессы поэтапно, чтобы вы сразу получали пользу.
+                            Первый результат через 2–3 недели. Настраиваю процессы поэтапно, чтобы вы сразу получали пользу.
                         </div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Нет техспециалистов</h4>
+                        <h4>У нас нет своего IT-специалиста</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
@@ -767,18 +891,18 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Займёт много времени</h4>
+                        <h4>Это займёт слишком много времени</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Результат через 2-3 недели. Нужно только 1-2 часа в неделю на согласование этапов.
+                            Результат через 2–3 недели. Нужно только 1–2 часа в неделю на согласование этапов.
                         </div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Слишком дорого</h4>
+                        <h4>Это слишком дорого</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
@@ -789,18 +913,18 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Сотрудники не справятся</h4>
+                        <h4>Сотрудники не смогут разобраться</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Делаем решения интуитивно понятными и проводим обучение. Команда сможет работать через 1-2 дня.
+                            Делаем решения интуитивно понятными и проводим обучение. Команда сможет работать через 1–2 дня.
                         </div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Всё сломается</h4>
+                        <h4>А вдруг всё сломается?</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
@@ -811,12 +935,12 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Нет времени на внедрение</h4>
+                        <h4>Нет времени заниматься внедрением</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Беру всю работу на себя. Нужно 1-2 часа в неделю на согласование. Это сэкономит десятки часов в будущем.
+                            Беру всю работу на себя. Нужно 1–2 часа в неделю на согласование. Это сэкономит десятки часов в будущем.
                         </div>
                     </div>
                 </div>
@@ -829,10 +953,16 @@
             <div class="cta-box">
                 <h2>Готовы обсудить проект?</h2>
                 <p>Бесплатная консультация — обсудим задачи и покажу, как технологии помогут бизнесу расти</p>
-                <a href="https://wa.me/79151099000" class="cta-whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                    Написать в WhatsApp
-                </a>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/79151099000" class="cta-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="https://t.me/romansashin" class="cta-telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                        Telegram
+                    </a>
+                </div>
                 <p class="cta-note">Отвечаю в течение 1 часа в рабочее время</p>
             </div>
         </div>
@@ -849,8 +979,8 @@
                     <a href="#contact">Контакты</a>
                 </div>
                 <div class="social-links">
-                    <a href="https://t.me/romansashin"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="mailto:mail@romansashin.ru"><i class="fas fa-envelope"></i></a>
+                    <a href="https://t.me/romansashin" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="mailto:mail@romansashin.ru" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -860,38 +990,45 @@
     </footer>
 
     <script>
-        // FAQ accordion - fixed bug
+        // Burger menu
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // FAQ accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const faqItem = question.closest('.faq-item');
                 const isActive = faqItem.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Open clicked if it wasn't active
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
+
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+
+                if (!isActive) faqItem.classList.add('active');
             });
         });
 
-        // Close FAQ when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.faq-item')) {
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
             }
         });
 
-        // Header scroll
+        // Header shadow on scroll
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.style.boxShadow = window.scrollY > 10 ? '0 1px 3px rgba(0,0,0,0.1)' : 'none';
+            document.querySelector('header').style.boxShadow =
+                window.scrollY > 10 ? '0 1px 3px rgba(0,0,0,0.1)' : 'none';
         });
     </script>
 </body>
