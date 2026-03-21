@@ -374,6 +374,55 @@
             line-height: 1.6;
         }
 
+        /* ─── Stack ─── */
+        .stack { padding: 80px 0; }
+
+        .stack-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .stack-group { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+
+        .stack-group-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-light);
+            min-width: 110px;
+            flex-shrink: 0;
+        }
+
+        .stack-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+        .stack-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 0.88rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+
+        .stack-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .stack-tag i { font-size: 0.85rem; color: var(--primary); }
+
+        @media (max-width: 900px) {
+            .stack-group { flex-direction: column; gap: 8px; }
+            .stack-group-label { min-width: unset; }
+        }
+
         /* ─── Cases ─── */
         .cases {
             padding: 80px 0;
@@ -665,7 +714,9 @@
             .hero-buttons { justify-content: center; }
 
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-item { padding: 20px 16px; }
             .stat-item:nth-child(2) { border-right: none; }
+            .stat-item:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.15); }
             .stat-item:nth-child(1),
             .stat-item:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.15); }
 
@@ -759,15 +810,15 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number">40+</div>
                     <div class="stat-label">Реализованных проектов</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">7+</div>
+                    <div class="stat-number">5+</div>
                     <div class="stat-label">Лет в разработке</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">30+</div>
+                    <div class="stat-number">20+</div>
                     <div class="stat-label">Довольных клиентов</div>
                 </div>
                 <div class="stat-item">
@@ -812,6 +863,53 @@
                     </div>
                     <h3>Доработка проектов</h3>
                     <p>Оптимизация, масштабирование, аудит архитектуры, исправление ошибок и обновление кода.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stack">
+        <div class="container">
+            <div class="section-header">
+                <h2>Стек технологий</h2>
+                <p>Инструменты, с которыми я работаю каждый день</p>
+            </div>
+            <div class="stack-groups">
+                <div class="stack-group">
+                    <span class="stack-group-label">AI & LLM</span>
+                    <div class="stack-tags">
+                        <span class="stack-tag"><i class="fas fa-brain"></i> OpenAI GPT</span>
+                        <span class="stack-tag"><i class="fas fa-brain"></i> Claude</span>
+                        <span class="stack-tag"><i class="fas fa-robot"></i> LangChain</span>
+                        <span class="stack-tag"><i class="fas fa-database"></i> RAG</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <span class="stack-group-label">Автоматизация</span>
+                    <div class="stack-tags">
+                        <span class="stack-tag"><i class="fas fa-project-diagram"></i> n8n</span>
+                        <span class="stack-tag"><i class="fas fa-bolt"></i> Make</span>
+                        <span class="stack-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="stack-tag"><i class="fab fa-telegram-plane"></i> Telegram Bot API</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <span class="stack-group-label">Разработка</span>
+                    <div class="stack-tags">
+                        <span class="stack-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="stack-tag"><i class="fab fa-react"></i> React</span>
+                        <span class="stack-tag"><i class="fab fa-js"></i> TypeScript</span>
+                        <span class="stack-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <span class="stack-group-label">Инфраструктура</span>
+                    <div class="stack-tags">
+                        <span class="stack-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="stack-tag"><i class="fas fa-server"></i> nginx</span>
+                        <span class="stack-tag"><i class="fab fa-linux"></i> Linux VPS</span>
+                        <span class="stack-tag"><i class="fab fa-github"></i> GitHub</span>
+                    </div>
                 </div>
             </div>
         </div>
