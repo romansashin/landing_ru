@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Роман Сашин | IT Инженер & Архитектор</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #283655;
+            --primary-dark: #1e2a42;
+            --primary-light: #3a4d72;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --border: #e2e8f0;
+            --shadow: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-hover: 0 4px 12px rgba(0,0,0,0.1);
+            --whatsapp: #25D366;
+            --telegram: #229ED9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 140px 0 80px;
+            background: var(--bg-alt);
+        }
+
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text);
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px 20px;
+            transition: all 0.2s;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            background: #edf0f5;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Cases */
+        .cases {
+            padding: 80px 0;
+            background: var(--bg-alt);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .case-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 28px;
+            transition: all 0.2s;
+        }
+
+        .case-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .case-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .case-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .case-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .case-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .case-link:hover {
+            gap: 10px;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            align-items: start;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg);
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-alt);
+        }
+
+        .faq-question h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+            flex: 1;
+            margin-right: 16px;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 20px 18px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--bg-alt);
+        }
+
+        .cta-box {
+            background: var(--primary);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 32px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+            padding: 14px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+
+        .cta-whatsapp:hover {
+            background: #1ebc57;
+            transform: translateY(-2px);
+        }
+
+        .cta-note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            margin-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cases-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-box {
+                padding: 36px 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Роман Сашин</div>
+                <ul class="nav-links">
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#cases">Кейсы</a></li>
+                    <li><a href="#faq">Вопросы</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+                <a href="https://t.me/romansashin" class="cta-btn">Связаться</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-image">
+                    <img src="1mini.png" alt="Роман Сашин">
+                </div>
+                
+                <div class="hero-content">
+                    <h1>IT Инженер & <span>Архитектор</span></h1>
+                    <p>Превращаю сложные технологические задачи в простые и эффективные решения для вашего бизнеса. Современные технологии и проверенные методики для роста компании.</p>
+                    <div class="hero-buttons">
+                        <a href="https://t.me/romansashin" class="btn-primary">
+                            <i class="fab fa-telegram-plane"></i>
+                            Написать в Telegram
+                        </a>
+                        <a href="#cases" class="btn-secondary">
+                            Кейсы
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Услуги</h2>
+                <p>Комплексные решения для бизнеса</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Автоматизация бизнеса</h3>
+                    <p>Интеграция CRM, настройка обработки заказов, сокращение времени на операционные задачи.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Веб-приложения</h3>
+                    <p>Удобные и функциональные решения от идеи до запуска. Полное сопровождение проекта.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Нейросети</h3>
+                    <p>AI-ассистенты, чат-боты, анализ данных, автоматизация контента для вашего бизнеса.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Доработка проектов</h3>
+                    <p>Оптимизация, масштабирование, аудит архитектуры, исправление ошибок и обновление кода.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cases" id="cases">
+        <div class="container">
+            <div class="section-header">
+                <h2>Мои кейсы</h2>
+                <p>Последние коммерческие проекты</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <span class="case-tag">AI & Автоматизация</span>
+                    <h3>AI-ассистент для Ozon: автоматизация ответов на отзывы</h3>
+                    <p>Кастомная система обработки отзывов для селлера на Ozon (ниша БАДы и витамины).</p>
+                    <a href="https://vc.ru/id5255038/2740640-avtomatizatsiya-otvetov-na-otzyvy-dlya-ozon-s-pomoshchyu-ai-assistenta" class="case-link">Смотреть кейс →</a>
+                </div>
+                <div class="case-card">
+                    <span class="case-tag">Веб-приложение</span>
+                    <h3>«Карманный психолог» — аудио-платформа для практик</h3>
+                    <p>Коммерческий продукт для аудио-практик, который уже работает у клиента-психолога.</p>
+                    <a href="https://vc.ru/id5255038/2734689-karmanij-psikholog-kak-izbezhat-lovushek-gotovykh-platform-dlya-audio-produkta" class="case-link">Смотреть кейс →</a>
+                </div>
+                <div class="case-card">
+                    <span class="case-tag">Telegram</span>
+                    <h3>Клуб по подписке в Telegram</h3>
+                    <p>Свой движок вместо готовых ботов. Полный контроль над функционалом и монетизацией.</p>
+                    <a href="https://vc.ru/id5255038/2708894-sozdanie-sobstvennogo-dvizhka-dlya-kluba-po-podpiske-v-telegram" class="case-link">Смотреть кейс →</a>
+                </div>
+                <div class="case-card">
+                    <span class="case-tag">HR & ИИ</span>
+                    <h3>HR-ассистент на базе ИИ для подбора персонала</h3>
+                    <p>Помощь строительной компании в поиске квалифицированных мастеров.</p>
+                    <a href="https://vc.ru/ai/2216450-kak-ii-assistent-izmenil-podbor-personala-v-stroitelstve" class="case-link">Смотреть кейс →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Вопросы</h2>
+                <p>Ответы на частые вопросы</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Наши процессы уникальны</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Я работал с компаниями из разных сфер и настраивал решения под их задачи. Проведём бесплатный анализ процессов.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Не доверяем автоматике</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Автоматизация убирает рутину, а вы сосредотачиваетесь на важных решениях. Система собирает данные — вы анализируете отчёты.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Нет бюджета</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Начнём с малого — автоматизируем один процесс. Экономия от него покроет затраты на следующие этапы.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>И так всё работает</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Давайте посмотрим, сколько ресурсов тратится впустую. Автоматизация отчётности освободит время для развития бизнеса.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Пробовали — не вышло</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Проблемы возникают из-за неподходящих инструментов. Я покажу работающий прототип за 2 недели.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>AI — это сложно</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Первый результат через 2-3 недели. Настраиваю процессы поэтапно, чтобы вы сразу получали пользу.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Нет техспециалистов</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Предоставляю полное сопровождение: настройка, обучение сотрудников, поддержка. Вам не нужно разбираться в технологиях.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Займёт много времени</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Результат через 2-3 недели. Нужно только 1-2 часа в неделю на согласование этапов.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Слишком дорого</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Мои цены ниже агентств. Зарплата сотрудника на рутину часто превышает стоимость автоматизации в разы.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Сотрудники не справятся</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Делаем решения интуитивно понятными и проводим обучение. Команда сможет работать через 1-2 дня.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Всё сломается</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Тестирую решения перед запуском, предоставляю поддержку и гарантию. Всегда можно вернуться к старому процессу.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Нет времени на внедрение</h4>
+                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Беру всю работу на себя. Нужно 1-2 часа в неделю на согласование. Это сэкономит десятки часов в будущем.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Готовы обсудить проект?</h2>
+                <p>Бесплатная консультация — обсудим задачи и покажу, как технологии помогут бизнесу расти</p>
+                <a href="https://wa.me/79151099000" class="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    Написать в WhatsApp
+                </a>
+                <p class="cta-note">Отвечаю в течение 1 часа в рабочее время</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Роман Сашин</div>
+                <div class="footer-links">
+                    <a href="#services">Услуги</a>
+                    <a href="#cases">Кейсы</a>
+                    <a href="#faq">Вопросы</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://t.me/romansashin"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="mailto:mail@romansashin.ru"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Роман Сашин. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ accordion - fixed bug
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const faqItem = question.closest('.faq-item');
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Close FAQ when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.faq-item')) {
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        });
+
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.style.boxShadow = window.scrollY > 10 ? '0 1px 3px rgba(0,0,0,0.1)' : 'none';
+        });
+    </script>
+</body>
+</html>
