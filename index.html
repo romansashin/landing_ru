@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Роман Сашин | IT Инженер & Архитектор</title>
-    <meta name="description" content="Разработка умных IT-решений для роста вашего бизнеса">
+    <title>Роман Сашин — системная автоматизация и разработка для бизнеса</title>
+    <meta name="description" content="Делаю так, чтобы бизнес работал системно, а не на ручном управлении. Автоматизация, AI-решения, веб-приложения.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="1mini.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -279,39 +279,6 @@
             color: var(--primary);
         }
 
-        /* ─── Stats ─── */
-        .stats {
-            background: var(--primary);
-            padding: 40px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-            text-align: center;
-        }
-
-        .stat-item {
-            padding: 8px 16px;
-            border-right: 1px solid rgba(255,255,255,0.15);
-        }
-
-        .stat-item:last-child { border-right: none; }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
-            line-height: 1.2;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.75);
-            margin-top: 4px;
-        }
-
         /* ─── Services ─── */
         .services { padding: 80px 0; }
 
@@ -557,6 +524,54 @@
 
         .faq-item.active .faq-answer { max-height: 300px; }
 
+        /* ─── Guarantee ─── */
+        .guarantee {
+            padding: 80px 0;
+            background: var(--bg);
+        }
+
+        .guarantee-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .guarantee-card {
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .guarantee-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .guarantee-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.4;
+        }
+
+        .guarantee-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .faq-grid--narrow {
+            grid-template-columns: 1fr;
+            max-width: 700px;
+        }
+
+        @media (max-width: 900px) {
+            .guarantee-grid { grid-template-columns: 1fr; }
+        }
+
         /* ─── CTA ─── */
         .cta-section {
             padding: 40px 0 80px;
@@ -714,13 +729,6 @@
 
             .hero-buttons { justify-content: center; }
 
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .stat-item { padding: 20px 16px; }
-            .stat-item:nth-child(2) { border-right: none; }
-            .stat-item:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.15); }
-            .stat-item:nth-child(1),
-            .stat-item:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.15); }
-
             .services-grid { grid-template-columns: repeat(2, 1fr); }
 
             .cases-grid, .faq-grid { grid-template-columns: 1fr; }
@@ -739,7 +747,6 @@
 
         @media (max-width: 500px) {
             .services-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .cta-buttons { flex-direction: column; align-items: center; }
         }
     </style>
@@ -791,8 +798,8 @@
                         <i class="fas fa-circle" style="color: #22c55e; font-size: 8px;"></i>
                         Доступен для новых проектов
                     </div>
-                    <h1>IT Инженер & <span>Архитектор</span></h1>
-                    <p>Превращаю сложные технологические задачи в простые и эффективные решения для вашего бизнеса. Современные технологии и проверенные методики для роста компании.</p>
+                    <h1>Делаю так, чтобы бизнес работал <span>системно</span>, а не на ручном управлении</h1>
+                    <p>Если у вас много ручной работы, процессы держатся на людях или пробовали что-то внедрить но не пошло — напишите, разберёмся.</p>
                     <div class="hero-buttons">
                         <a href="https://t.me/romansashin" class="btn-primary" target="_blank" rel="noopener nofollow">
                             <i class="fab fa-telegram-plane"></i>
@@ -807,34 +814,10 @@
         </div>
     </section>
 
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">40+</div>
-                    <div class="stat-label">Реализованных проектов</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Лет в разработке</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Довольных клиентов</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2–3</div>
-                    <div class="stat-label">Недели до первого результата</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <h2>Услуги</h2>
-                <p>Комплексные решения для бизнеса</p>
+                <h2>Что я делаю</h2>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -842,28 +825,28 @@
                         <i class="fas fa-cog"></i>
                     </div>
                     <h3>Автоматизация бизнеса</h3>
-                    <p>Интеграция CRM, настройка обработки заказов, сокращение времени на операционные задачи.</p>
+                    <p>Сотрудники делают одно и то же каждый день? Настрою систему, которая будет делать это без людей — без ошибок и без напоминаний.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Веб-приложения</h3>
-                    <p>Удобные и функциональные решения от идеи до запуска. Полное сопровождение проекта.</p>
+                    <p>Нужен личный кабинет, платформа или сервис — сделаю с нуля. Без лишней сложности, чтобы клиенты и сотрудники могли работать без инструкций.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3>Нейросети</h3>
-                    <p>AI-ассистенты, чат-боты, анализ данных, автоматизация контента для вашего бизнеса.</p>
+                    <h3>AI-решения</h3>
+                    <p>Подключаю AI там, где он реально помогает — отвечать клиентам, обрабатывать заявки, разбирать данные. Только если это решает конкретную задачу, не ради хайпа.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3>Доработка проектов</h3>
-                    <p>Оптимизация, масштабирование, аудит архитектуры, исправление ошибок и обновление кода.</p>
+                    <p>Начали делать — застряло или не работает как надо? Разберу что есть, скажу честно что можно починить, и сделаю.</p>
                 </div>
             </div>
         </div>
@@ -872,44 +855,50 @@
     <section class="stack">
         <div class="container">
             <div class="section-header">
-                <h2>Стек технологий</h2>
-                <p>Инструменты, с которыми я работаю каждый день</p>
+                <h2>Стек</h2>
             </div>
             <div class="stack-groups">
                 <div class="stack-group">
-                    <span class="stack-group-label">Нейросети</span>
+                    <span class="stack-group-label">Backend</span>
                     <div class="stack-tags">
-                        <span class="stack-tag"><i class="fas fa-brain"></i> OpenAI API</span>
-                        <span class="stack-tag"><i class="fas fa-brain"></i> Anthropic Claude</span>
-                        <span class="stack-tag"><i class="fas fa-microphone"></i> Whisper</span>
-                        <span class="stack-tag"><i class="fas fa-image"></i> Midjourney API</span>
-                    </div>
-                </div>
-                <div class="stack-group">
-                    <span class="stack-group-label">Автоматизация</span>
-                    <div class="stack-tags">
-                        <span class="stack-tag"><i class="fas fa-project-diagram"></i> N8n</span>
                         <span class="stack-tag"><i class="fab fa-python"></i> Python</span>
-                        <span class="stack-tag"><i class="fas fa-plug"></i> Webhook / REST API</span>
-                        <span class="stack-tag"><i class="fab fa-telegram-plane"></i> Telegram Bots</span>
+                        <span class="stack-tag"><i class="fas fa-bolt"></i> FastAPI</span>
+                        <span class="stack-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="stack-tag"><i class="fab fa-js"></i> TypeScript</span>
                     </div>
                 </div>
                 <div class="stack-group">
-                    <span class="stack-group-label">Разработка</span>
+                    <span class="stack-group-label">Frontend</span>
                     <div class="stack-tags">
-                        <span class="stack-tag"><i class="fab fa-node-js"></i> Node.js</span>
                         <span class="stack-tag"><i class="fab fa-react"></i> React</span>
-                        <span class="stack-tag"><i class="fab fa-js"></i> TypeScript</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <span class="stack-group-label">AI / Агенты</span>
+                    <div class="stack-tags">
+                        <span class="stack-tag"><i class="fas fa-brain"></i> LangChain</span>
+                        <span class="stack-tag"><i class="fas fa-brain"></i> LangGraph</span>
+                        <span class="stack-tag"><i class="fas fa-project-diagram"></i> Мультиагентные системы</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <span class="stack-group-label">Данные</span>
+                    <div class="stack-tags">
                         <span class="stack-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                        <span class="stack-tag"><i class="fas fa-memory"></i> Redis</span>
+                        <span class="stack-tag"><i class="fas fa-search"></i> Qdrant</span>
                     </div>
                 </div>
                 <div class="stack-group">
                     <span class="stack-group-label">Инфраструктура</span>
                     <div class="stack-tags">
                         <span class="stack-tag"><i class="fab fa-docker"></i> Docker</span>
-                        <span class="stack-tag"><i class="fas fa-server"></i> Nginx</span>
-                        <span class="stack-tag"><i class="fab fa-linux"></i> Linux VPS</span>
-                        <span class="stack-tag"><i class="fab fa-github"></i> GitHub</span>
+                    </div>
+                </div>
+                <div class="stack-group">
+                    <span class="stack-group-label">Интеграции</span>
+                    <div class="stack-tags">
+                        <span class="stack-tag"><i class="fab fa-telegram-plane"></i> Telegram Bot API</span>
                     </div>
                 </div>
             </div>
@@ -919,32 +908,31 @@
     <section class="cases" id="cases">
         <div class="container">
             <div class="section-header">
-                <h2>Мои кейсы</h2>
-                <p>Последние коммерческие проекты</p>
+                <h2>Проекты</h2>
             </div>
             <div class="cases-grid">
                 <div class="case-card">
                     <span class="case-tag">AI & Автоматизация</span>
-                    <h3>AI-ассистент для Ozon: автоматизация ответов на отзывы</h3>
-                    <p>Кастомная система обработки отзывов для селлера на Ozon (ниша БАДы и витамины).</p>
+                    <h3>Автоответы на отзывы для Ozon-селлера</h3>
+                    <p>Селлер не успевал отвечать на вопросы покупателей — задержки отбивали желание покупать. Сделал систему, которая сама читает вопросы, проверяет наличие товара на складе и отвечает грамотно, без запрещённых формулировок. Теперь 95% ответов приходят мгновенно, круглосуточно — без участия владельца.</p>
                     <a href="https://vc.ru/id5255038/2740640-avtomatizatsiya-otvetov-na-otzyvy-dlya-ozon-s-pomoshchyu-ai-assistenta" class="case-link" target="_blank" rel="noopener nofollow">Смотреть кейс →</a>
                 </div>
                 <div class="case-card">
                     <span class="case-tag">Веб-приложение</span>
-                    <h3>«Карманный психолог» — аудио-платформа для практик</h3>
-                    <p>Коммерческий продукт для аудио-практик, который уже работает у клиента-психолога.</p>
+                    <h3>«Карманный психолог» — платформа для аудио-практик</h3>
+                    <p>Психолог продавала медитации через Telegram и GetCourse — комиссии съедали выручку, контент никак не защитить. Сделал собственную платформу: аудио играет даже при выключенном экране, доступ закрыт для посторонних. Клиент получил продукт под полным контролем — без комиссий и без зависимости от чужих сервисов.</p>
                     <a href="https://vc.ru/id5255038/2734689-karmanij-psikholog-kak-izbezhat-lovushek-gotovykh-platform-dlya-audio-produkta" class="case-link" target="_blank" rel="noopener nofollow">Смотреть кейс →</a>
                 </div>
                 <div class="case-card">
                     <span class="case-tag">Telegram</span>
-                    <h3>Клуб по подписке в Telegram</h3>
-                    <p>Свой движок вместо готовых ботов. Полный контроль над функционалом и монетизацией.</p>
+                    <h3>Свой движок для клуба по подписке в Telegram</h3>
+                    <p>Готовые боты не давали нужного контроля — реферальная система не работала, данные клиентов оставались у платформы. Написал движок с нуля: управление подписками, реферальная программа, автоматический возврат тех, кто не завершил оплату. За два года клуб работает без комиссий — напоминания о незавершённых покупках возвращают 15–20% ушедших.</p>
                     <a href="https://vc.ru/id5255038/2708894-sozdanie-sobstvennogo-dvizhka-dlya-kluba-po-podpiske-v-telegram" class="case-link" target="_blank" rel="noopener nofollow">Смотреть кейс →</a>
                 </div>
                 <div class="case-card">
-                    <span class="case-tag">HR & ИИ</span>
-                    <h3>HR-ассистент на базе ИИ для подбора персонала</h3>
-                    <p>Помощь строительной компании в поиске квалифицированных мастеров.</p>
+                    <span class="case-tag">HR & AI</span>
+                    <h3>AI-ассистент для найма в строительной компании</h3>
+                    <p>Из десяти нанятых рабочих через месяц оставались двое-трое — компания теряла деньги на каждом найме. Сделал ассистента, который сам разбирает резюме, проводит техническое собеседование и заносит результаты в CRM. Руководитель перестал тратить время на первичный отбор — система сама выводит лучших кандидатов на финальное интервью.</p>
                     <a href="https://vc.ru/ai/2216450-kak-ii-assistent-izmenil-podbor-personala-v-stroitelstve" class="case-link" target="_blank" rel="noopener nofollow">Смотреть кейс →</a>
                 </div>
             </div>
@@ -955,72 +943,27 @@
         <div class="container">
             <div class="section-header">
                 <h2>Частые вопросы</h2>
-                <p>Отвечаю на возражения, которые слышу чаще всего</p>
             </div>
-            <div class="faq-grid">
+            <div class="faq-grid faq-grid--narrow">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>У нас уникальные процессы, под нас не подстроиться</h4>
+                        <h4>А вдруг всё сломается?</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Я работал с компаниями из разных сфер и настраивал решения под их задачи. Проведём бесплатный анализ процессов.
+                            Всё тестируется до запуска. Год гарантии по договору — если что-то пошло не так после сдачи, исправлю.
                         </div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Мы не доверяем автоматике</h4>
+                        <h4>Столкнулись с вайп-кодерами — не вышло</h4>
                         <div class="faq-icon"><i class="fas fa-plus"></i></div>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Автоматизация убирает рутину, а вы сосредотачиваетесь на важных решениях. Система собирает данные — вы анализируете отчёты.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Сейчас нет бюджета</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Начнём с малого — автоматизируем один процесс. Экономия от него покроет затраты на следующие этапы.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>И так всё работает, зачем что-то менять</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Давайте посмотрим, сколько ресурсов тратится впустую. Автоматизация отчётности освободит время для развития бизнеса.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Пробовали автоматизацию — не вышло</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Проблемы возникают из-за неподходящих инструментов. Я покажу работающий прототип за 2 недели.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>AI — это слишком сложно для нас</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Первый результат через 2–3 недели. Настраиваю процессы поэтапно, чтобы вы сразу получали пользу.
+                            Знакомая история. Разберу что сделали до меня, скажу честно что можно спасти, а что проще переделать нормально.
                         </div>
                     </div>
                 </div>
@@ -1031,64 +974,29 @@
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Предоставляю полное сопровождение: настройка, обучение сотрудников, поддержка. Вам не нужно разбираться в технологиях.
+                            Не нужен. Сдаю с документацией, объясняю команде. Три месяца после запуска на связи.
                         </div>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Это займёт слишком много времени</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Результат через 2–3 недели. Нужно только 1–2 часа в неделю на согласование этапов.
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee">
+        <div class="container">
+            <div class="section-header">
+                <h2>Гарантия и поддержка</h2>
+            </div>
+            <div class="guarantee-grid">
+                <div class="guarantee-card">
+                    <div class="guarantee-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Год гарантии по договору</h3>
+                    <p>Все работы прописаны детально — никаких устных договорённостей.</p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Это слишком дорого</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Мои цены ниже агентств. Зарплата сотрудника на рутину часто превышает стоимость автоматизации в разы.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Сотрудники не смогут разобраться</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Делаем решения интуитивно понятными и проводим обучение. Команда сможет работать через 1–2 дня.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>А вдруг всё сломается?</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Тестирую решения перед запуском, предоставляю поддержку и гарантию. Всегда можно вернуться к старому процессу.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h4>Нет времени заниматься внедрением</h4>
-                        <div class="faq-icon"><i class="fas fa-plus"></i></div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Беру всю работу на себя. Нужно 1–2 часа в неделю на согласование. Это сэкономит десятки часов в будущем.
-                        </div>
-                    </div>
+                <div class="guarantee-card">
+                    <div class="guarantee-icon"><i class="fas fa-headset"></i></div>
+                    <h3>3 месяца сопровождения после запуска</h3>
+                    <p>Включено в стоимость. Слежу чтобы система работала, не пропадаю.</p>
                 </div>
             </div>
         </div>
@@ -1097,8 +1005,8 @@
     <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-box">
-                <h2>Готовы обсудить проект?</h2>
-                <p>Бесплатная консультация — обсудим задачи и покажу, как технологии помогут бизнесу расти</p>
+                <h2>Есть задача? Напишите.</h2>
+                <p>Расскажите что происходит — скажу честно, чем могу помочь.</p>
                 <div class="cta-buttons">
                     <a href="https://wa.me/79151099000" class="cta-whatsapp" target="_blank" rel="noopener nofollow">
                         <i class="fab fa-whatsapp"></i>
