@@ -221,9 +221,9 @@
         .hero-badge i { font-size: 0.75rem; }
 
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: 1.75rem;
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.35;
             margin-bottom: 16px;
             color: var(--text);
         }
@@ -231,7 +231,7 @@
         .hero h1 span { color: var(--primary); }
 
         .hero p {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--text-light);
             margin-bottom: 32px;
             line-height: 1.7;
@@ -285,7 +285,7 @@
         .section-header { margin-bottom: 48px; }
 
         .section-header h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 12px;
             color: var(--text);
@@ -330,7 +330,7 @@
         }
 
         .service-card h3 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 10px;
             line-height: 1.4;
@@ -338,9 +338,9 @@
         }
 
         .service-card p {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         /* ─── Stack ─── */
@@ -359,7 +359,7 @@
         }
 
         .stack-group-label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--text);
         }
@@ -373,9 +373,9 @@
             background: var(--bg);
             border: 1px solid var(--border);
             color: var(--text);
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            padding: 6px 14px;
+            padding: 7px 16px;
             border-radius: 20px;
             transition: all 0.2s;
         }
@@ -427,7 +427,7 @@
         }
 
         .case-card h3 {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 12px;
             line-height: 1.5;
@@ -435,17 +435,17 @@
         }
 
         .case-card p {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-light);
             margin-bottom: 16px;
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .case-link {
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -484,7 +484,7 @@
         .faq-question:hover { background: var(--bg-alt); }
 
         .faq-question h4 {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 500;
             color: var(--text);
             flex: 1;
@@ -514,12 +514,11 @@
         }
 
         .faq-answer-content {
-            padding: 0 20px 18px;
+            padding: 14px 20px 18px;
             color: var(--text-light);
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.65;
             border-top: 1px solid var(--border);
-            padding-top: 14px;
         }
 
         .faq-item.active .faq-answer { max-height: 300px; }
@@ -551,16 +550,16 @@
         }
 
         .guarantee-card h3 {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: var(--text);
             line-height: 1.4;
         }
 
         .guarantee-card p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .faq-grid--narrow {
@@ -722,22 +721,30 @@
             .nav-links, .cta-btn { display: none; }
             .burger { display: flex; }
 
+            .hero { padding: 100px 0 60px; }
+
             .hero-wrapper {
                 flex-direction: column;
                 text-align: center;
-                gap: 24px;
+                gap: 20px;
             }
 
+            .hero-image { width: 160px; height: 160px; }
+
+            .hero h1 { font-size: 1.45rem; }
+            .hero p { font-size: 1rem; }
             .hero-buttons { justify-content: center; }
+
+            .section-header h2 { font-size: 1.5rem; }
 
             .services-grid { grid-template-columns: repeat(2, 1fr); }
 
             .cases-grid, .faq-grid { grid-template-columns: 1fr; }
 
-            .hero h1 { font-size: 1.8rem; }
-
             .cta-box { padding: 36px 24px; }
-            .cta-box h2 { font-size: 1.4rem; }
+            .cta-box h2 { font-size: 1.5rem; }
+
+            .guarantee-card { padding: 28px 24px; }
 
             .footer-content {
                 flex-direction: column;
@@ -747,8 +754,12 @@
         }
 
         @media (max-width: 500px) {
+            .hero h1 { font-size: 1.3rem; }
+            .section-header h2 { font-size: 1.35rem; }
             .services-grid { grid-template-columns: 1fr; }
+            .service-card p, .case-card p { font-size: 0.97rem; }
             .cta-buttons { flex-direction: column; align-items: center; }
+            .cta-btn-mobile { width: 100%; }
         }
     </style>
 </head>
